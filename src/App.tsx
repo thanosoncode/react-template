@@ -6,21 +6,17 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from "react-router-dom";
-import Home from "./components/home/Home";
-import Counter from "./components/counter/Counter";
-import RootLayout from "./components/rootLayout/RootLayout";
-import Posts from "./components/posts/Posts";
-import Error from "./components/error/Error";
+
+import Home from "./components/Home";
+import RootLayout from "./components/RootLayout";
 
 const App = () => {
   const queryClient = new QueryClient();
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />} errorElement={<Error />}>
+      <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="/counter" element={<Counter />} />
-        <Route path="/posts" element={<Posts />} />
       </Route>,
     ),
   );
